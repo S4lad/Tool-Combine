@@ -1,7 +1,7 @@
 [
 {
-  "modid": "toolcombine",
-  "name": "Tool Combine",
+  "modid": "toolscombine",
+  "name": "Tools Combine",
   "description": "Lets you combine tools.",
   "version": "${version}",
   "mcversion": "${mcversion}",

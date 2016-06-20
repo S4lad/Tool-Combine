@@ -10,6 +10,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Collections;
 import java.util.Set;
@@ -21,10 +23,15 @@ import java.util.Set;
  * http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/modification-development/2550421-how-to-make-a-tool-e-g-a-sword-have-the-abilities
  */
 public class pade extends ItemTool {
-
 	
 
 	
+
+	@SideOnly(Side.CLIENT)
+    public boolean isFull3D()
+    {
+        return true;
+    }
 
 	/**
 	 * The speed at which blocks are harvested if this isn't their correct tool
@@ -35,11 +42,13 @@ public class pade extends ItemTool {
 		super(4.0f, toolMaterial, Collections.EMPTY_SET);
 		setHarvestLevel("pickaxe", toolMaterial.getHarvestLevel());
 		setHarvestLevel("shovel", toolMaterial.getHarvestLevel());
+		
+		
 
 		
 		
 	}
-
+	
 	/**
 	 * The {@link Material}s that this tool is effective on.
 	 */

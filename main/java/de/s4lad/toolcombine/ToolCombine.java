@@ -1,27 +1,35 @@
 package de.s4lad.toolcombine;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
+import java.util.ArrayList;
+import java.util.List;
+
 import de.s4lad.toolcombine.items.pade;
 import de.s4lad.toolcombine.items.paxe;
 import de.s4lad.toolcombine.items.saxe;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemMeshDefinition;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 
 @Mod(modid = ToolCombine.MODID, version = ToolCombine.VERSION)
 
 public class ToolCombine
 {
-    public static final String MODID = "ToolCombine";
-    public static final String VERSION = "0.4.5";
+    public static final String MODID = "ToolsCombine";
+    public static final String VERSION = "0.4.8";
     
     public static ToolMaterial Wooden = EnumHelper.addToolMaterial("Wooden", 0, 59, 2.0F,-2.0F , 15);
     public static ToolMaterial Stone = EnumHelper.addToolMaterial("Stone", 1, 131, 4.0F,-2.0F , 5);
@@ -67,37 +75,40 @@ public class ToolCombine
     public static Item essence;
     int essenceID = 515;
     
-    
+    public static List<Item> namesList = new ArrayList<Item>();
+
     
     @EventHandler
     public void PreInit(FMLPreInitializationEvent event){
+    	
+    	
     	
     	    }
     
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-		wpade = new pade(Wooden).setUnlocalizedName("wpade").setTextureName("toolcombine:wpade").setCreativeTab(CreativeTabs.tabTools);
-		wpaxe = new paxe(Wooden).setUnlocalizedName("wpaxe").setTextureName("toolcombine:wpaxe").setCreativeTab(CreativeTabs.tabTools);
-		wsaxe = new saxe(Wooden).setUnlocalizedName("wsaxe").setTextureName("toolcombine:wsaxe").setCreativeTab(CreativeTabs.tabTools);
+		wpade = new pade(Wooden).setUnlocalizedName("wpade").setCreativeTab(CreativeTabs.tabTools);
+		wpaxe = new paxe(Wooden).setUnlocalizedName("wpaxe").setCreativeTab(CreativeTabs.tabTools);
+		wsaxe = new saxe(Wooden).setUnlocalizedName("wsaxe").setCreativeTab(CreativeTabs.tabTools);
 		
-		spade = new pade(Stone).setUnlocalizedName("spade").setTextureName("toolcombine:spade").setCreativeTab(CreativeTabs.tabTools);
-		spaxe = new paxe(Stone).setUnlocalizedName("spaxe").setTextureName("toolcombine:spaxe").setCreativeTab(CreativeTabs.tabTools);
-		ssaxe = new saxe(Stone).setUnlocalizedName("ssaxe").setTextureName("toolcombine:ssaxe").setCreativeTab(CreativeTabs.tabTools);
+		spade = new pade(Stone).setUnlocalizedName("spade").setCreativeTab(CreativeTabs.tabTools);
+		spaxe = new paxe(Stone).setUnlocalizedName("spaxe").setCreativeTab(CreativeTabs.tabTools);
+		ssaxe = new saxe(Stone).setUnlocalizedName("ssaxe").setCreativeTab(CreativeTabs.tabTools);
 		
-		ipade = new pade(Iron).setUnlocalizedName("ipade").setTextureName("toolcombine:ipade").setCreativeTab(CreativeTabs.tabTools);
-		ipaxe = new paxe(Iron).setUnlocalizedName("ipaxe").setTextureName("toolcombine:ipaxe").setCreativeTab(CreativeTabs.tabTools);
-		isaxe = new saxe(Iron).setUnlocalizedName("isaxe").setTextureName("toolcombine:isaxe").setCreativeTab(CreativeTabs.tabTools);
+		ipade = new pade(Iron).setUnlocalizedName("ipade").setCreativeTab(CreativeTabs.tabTools);
+		ipaxe = new paxe(Iron).setUnlocalizedName("ipaxe").setCreativeTab(CreativeTabs.tabTools);
+		isaxe = new saxe(Iron).setUnlocalizedName("isaxe").setCreativeTab(CreativeTabs.tabTools);
 		
-		dpade = new pade(Diamond).setUnlocalizedName("dpade").setTextureName("toolcombine:dpade").setCreativeTab(CreativeTabs.tabTools);
-		dpaxe = new paxe(Diamond).setUnlocalizedName("dpaxe").setTextureName("toolcombine:dpaxe").setCreativeTab(CreativeTabs.tabTools);
-		dsaxe = new saxe(Diamond).setUnlocalizedName("dsaxe").setTextureName("toolcombine:dsaxe").setCreativeTab(CreativeTabs.tabTools);
+		dpade = new pade(Diamond).setUnlocalizedName("dpade").setCreativeTab(CreativeTabs.tabTools);
+		dpaxe = new paxe(Diamond).setUnlocalizedName("dpaxe").setCreativeTab(CreativeTabs.tabTools);
+		dsaxe = new saxe(Diamond).setUnlocalizedName("dsaxe").setCreativeTab(CreativeTabs.tabTools);
 		
-		gpade = new pade(Gold).setUnlocalizedName("gpade").setTextureName("toolcombine:gpade").setCreativeTab(CreativeTabs.tabTools);
-		gpaxe = new paxe(Gold).setUnlocalizedName("gpaxe").setTextureName("toolcombine:gpaxe").setCreativeTab(CreativeTabs.tabTools);
-		gsaxe = new saxe(Gold).setUnlocalizedName("gsaxe").setTextureName("toolcombine:gsaxe").setCreativeTab(CreativeTabs.tabTools);
+		gpade = new pade(Gold).setUnlocalizedName("gpade").setCreativeTab(CreativeTabs.tabTools);
+		gpaxe = new paxe(Gold).setUnlocalizedName("gpaxe").setCreativeTab(CreativeTabs.tabTools);
+		gsaxe = new saxe(Gold).setUnlocalizedName("gsaxe").setCreativeTab(CreativeTabs.tabTools);
 		
-		essence = new Item().setUnlocalizedName("essence").setTextureName("toolcombine:essence").setCreativeTab(CreativeTabs.tabMaterials);
+		essence = new Item().setUnlocalizedName("essence").setCreativeTab(CreativeTabs.tabMaterials);
 		
 		GameRegistry.registerItem(wpade, "wpade");
 		GameRegistry.registerItem(wpaxe, "wpaxe");
@@ -148,5 +159,28 @@ public class ToolCombine
 		GameRegistry.addSmelting(Items.stone_pickaxe, new ItemStack(ToolCombine.essence), 1.0F);
 		GameRegistry.addSmelting(Items.stone_axe, new ItemStack(ToolCombine.essence), 1.0F);
 		GameRegistry.addSmelting(Items.stone_shovel, new ItemStack(ToolCombine.essence), 1.0F);
+		
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(essence, 0, new ModelResourceLocation("ToolsCombine:essence","inventory"));
+		
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(wpade, 0, new ModelResourceLocation("ToolsCombine:wpade","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(wpaxe, 0, new ModelResourceLocation("ToolsCombine:wpaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(wsaxe, 0, new ModelResourceLocation("ToolsCombine:wsaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(spade, 0, new ModelResourceLocation("ToolsCombine:spade","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(spaxe, 0, new ModelResourceLocation("ToolsCombine:spaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ssaxe, 0, new ModelResourceLocation("ToolsCombine:ssaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(dpade, 0, new ModelResourceLocation("ToolsCombine:dpade","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(dpaxe, 0, new ModelResourceLocation("ToolsCombine:dpaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(dsaxe, 0, new ModelResourceLocation("ToolsCombine:dsaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ipade, 0, new ModelResourceLocation("ToolsCombine:ipade","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ipaxe, 0, new ModelResourceLocation("ToolsCombine:ipaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(isaxe, 0, new ModelResourceLocation("ToolsCombine:isaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(gpade, 0, new ModelResourceLocation("ToolsCombine:gpade","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(gpaxe, 0, new ModelResourceLocation("ToolsCombine:gpaxe","inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(gsaxe, 0, new ModelResourceLocation("ToolsCombine:gsaxe","inventory"));
+		
     }
+    
+    
+    	
+  
 }
