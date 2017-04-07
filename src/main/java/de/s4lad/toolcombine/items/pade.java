@@ -21,23 +21,15 @@ import java.util.Set;
  * http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/modification-development/2550421-how-to-make-a-tool-e-g-a-sword-have-the-abilities
  */
 public class pade extends ItemTool {
-
-	
-
-	
-
 	/**
 	 * The speed at which blocks are harvested if this isn't their correct tool
 	 */
 	private static final float DIG_SPEED_DEFAULT = 1.0f;
 
 	public pade(ToolMaterial toolMaterial) {
-		super(4.0f, toolMaterial, Collections.EMPTY_SET);
+		super(4.0f, 0.0f, toolMaterial, Collections.EMPTY_SET);
 		setHarvestLevel("pickaxe", toolMaterial.getHarvestLevel());
 		setHarvestLevel("shovel", toolMaterial.getHarvestLevel());
-
-		
-		
 	}
 
 	/**
@@ -45,14 +37,11 @@ public class pade extends ItemTool {
 	 */
 	private static final Set<Material> EFFECTIVE_MATERIALS = ImmutableSet.of(
 			// Pickaxe
-			Material.rock, Material.iron, Material.ice, Material.glass, Material.piston, Material.anvil, Material.circuits,
+			Material.ROCK, Material.IRON, Material.ICE, Material.GLASS, Material.PISTON, Material.ANVIL, Material.CIRCUITS,
 
 			// Shovel
-			Material.grass, Material.ground, Material.sand, Material.snow, Material.craftedSnow, Material.clay
+			Material.GRASS, Material.GROUND, Material.SAND, Material.SNOW, Material.CRAFTED_SNOW, Material.CLAY
 	);
-
-	
-	
 
 	/**
 	 * Can this tool harvest the {@link Block}?
@@ -64,13 +53,7 @@ public class pade extends ItemTool {
 	 * @param itemStack The tool
 	 * @return Is this tool effective on the {@link Block}'s {@link Material}?
 	 */
-	@Override
 	public boolean canHarvestBlock(Block block, ItemStack itemStack) {
-		return EFFECTIVE_MATERIALS.contains(block.getMaterial()) || block == Blocks.web;
+		return EFFECTIVE_MATERIALS.contains(block.getMaterial(block.getDefaultState())) || block == Blocks.WEB;
 	}
-
-	
-
-
 }
-
