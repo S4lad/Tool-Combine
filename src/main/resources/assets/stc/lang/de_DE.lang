@@ -1,0 +1,21 @@
+item.wpade.name=Holzspitzschaufel
+item.wpaxe.name=Holzspitzaxt
+item.wsaxe.name=Holzschaufelaxt
+
+item.spade.name=Steinspitzschaufel
+item.spaxe.name=Steinspitzaxt
+item.ssaxe.name=Steinschaufelaxt
+
+item.ipade.name=Eisenspitzschaufel
+item.ipaxe.name=Eisenspitzaxt
+item.isaxe.name=Eisenschaufelaxt
+
+item.dpade.name=Diamantspitzschaufel
+item.dpaxe.name=Diamantspitzaxt
+item.dsaxe.name=Diamantschaufelaxt
+
+item.gpade.name=Goldspitzschaufel
+item.gpaxe.name=Goldspitzaxt
+item.gsaxe.name=Goldschaufelaxt
+
+item.essence.name=Werkzeug Essenz

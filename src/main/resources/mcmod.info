@@ -1,0 +1,16 @@
+[
+{
+  "modid": "stc",
+  "name": "ToolsCombine",
+  "description": "Combine Tools...",
+  "version": "1.0",
+  "mcversion": "1.10.2",
+  "url": "https://minecraft.curseforge.com/projects/toolscombine",
+  "updateUrl": "https://minecraft.curseforge.com/projects/toolscombine",
+  "authorList": ["S4lad"],
+  "credits": "vinyldarkscratch, thanks for updating to newer versions.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
