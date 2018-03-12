@@ -1,5 +1,6 @@
 [
 {
+<<<<<<< HEAD
   "modid": "stc",
   "name": "ToolsCombine",
   "description": "Combine Tools...",
@@ -9,6 +10,17 @@
   "updateUrl": "https://minecraft.curseforge.com/projects/toolscombine",
   "authorList": ["S4lad"],
   "credits": "vinyldarkscratch, thanks for updating to newer versions.",
+=======
+  "modid": "toolscombine",
+  "name": "Tools Combine",
+  "description": "Lets you combine tools.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["S4ladreal"],
+  "credits": "",
+>>>>>>> refs/remotes/origin/master
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "toolscombine",
+  "name": "Tools Combine",
+  "description": "Lets you combine tools.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["S4ladreal"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
