@@ -1,10 +1,5 @@
 package de.s4lad.toolcombine;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import de.s4lad.toolcombine.items.pade;
 import de.s4lad.toolcombine.items.paxe;
 import de.s4lad.toolcombine.items.saxe;
@@ -13,7 +8,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 @Mod(modid = ToolCombine.MODID, version = ToolCombine.VERSION)
@@ -77,76 +78,76 @@ public class ToolCombine
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-		wpade = new pade(Wooden).setUnlocalizedName("wpade").setTextureName("toolcombine:wpade").setCreativeTab(CreativeTabs.tabTools);
-		wpaxe = new paxe(Wooden).setUnlocalizedName("wpaxe").setTextureName("toolcombine:wpaxe").setCreativeTab(CreativeTabs.tabTools);
-		wsaxe = new saxe(Wooden).setUnlocalizedName("wsaxe").setTextureName("toolcombine:wsaxe").setCreativeTab(CreativeTabs.tabTools);
+		wpade = new pade(Wooden).setUnlocalizedName("wpade").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:wpade")
+		wpaxe = new paxe(Wooden).setUnlocalizedName("wpaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:wpaxe")
+		wsaxe = new saxe(Wooden).setUnlocalizedName("wsaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:wsaxe")
 		
-		spade = new pade(Stone).setUnlocalizedName("spade").setTextureName("toolcombine:spade").setCreativeTab(CreativeTabs.tabTools);
-		spaxe = new paxe(Stone).setUnlocalizedName("spaxe").setTextureName("toolcombine:spaxe").setCreativeTab(CreativeTabs.tabTools);
-		ssaxe = new saxe(Stone).setUnlocalizedName("ssaxe").setTextureName("toolcombine:ssaxe").setCreativeTab(CreativeTabs.tabTools);
+		spade = new pade(Stone).setUnlocalizedName("spade").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:spade")
+		spaxe = new paxe(Stone).setUnlocalizedName("spaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:spaxe")
+		ssaxe = new saxe(Stone).setUnlocalizedName("ssaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:ssaxe")
 		
-		ipade = new pade(Iron).setUnlocalizedName("ipade").setTextureName("toolcombine:ipade").setCreativeTab(CreativeTabs.tabTools);
-		ipaxe = new paxe(Iron).setUnlocalizedName("ipaxe").setTextureName("toolcombine:ipaxe").setCreativeTab(CreativeTabs.tabTools);
-		isaxe = new saxe(Iron).setUnlocalizedName("isaxe").setTextureName("toolcombine:isaxe").setCreativeTab(CreativeTabs.tabTools);
+		ipade = new pade(Iron).setUnlocalizedName("ipade").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:ipade")
+		ipaxe = new paxe(Iron).setUnlocalizedName("ipaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:ipaxe")
+		isaxe = new saxe(Iron).setUnlocalizedName("isaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:isaxe")
 		
-		dpade = new pade(Diamond).setUnlocalizedName("dpade").setTextureName("toolcombine:dpade").setCreativeTab(CreativeTabs.tabTools);
-		dpaxe = new paxe(Diamond).setUnlocalizedName("dpaxe").setTextureName("toolcombine:dpaxe").setCreativeTab(CreativeTabs.tabTools);
-		dsaxe = new saxe(Diamond).setUnlocalizedName("dsaxe").setTextureName("toolcombine:dsaxe").setCreativeTab(CreativeTabs.tabTools);
+		dpade = new pade(Diamond).setUnlocalizedName("dpade").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:dpade")
+		dpaxe = new paxe(Diamond).setUnlocalizedName("dpaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:dpaxe")
+		dsaxe = new saxe(Diamond).setUnlocalizedName("dsaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:dsaxe")
 		
-		gpade = new pade(Gold).setUnlocalizedName("gpade").setTextureName("toolcombine:gpade").setCreativeTab(CreativeTabs.tabTools);
-		gpaxe = new paxe(Gold).setUnlocalizedName("gpaxe").setTextureName("toolcombine:gpaxe").setCreativeTab(CreativeTabs.tabTools);
-		gsaxe = new saxe(Gold).setUnlocalizedName("gsaxe").setTextureName("toolcombine:gsaxe").setCreativeTab(CreativeTabs.tabTools);
+		gpade = new pade(Gold).setUnlocalizedName("gpade").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:gpade")
+		gpaxe = new paxe(Gold).setUnlocalizedName("gpaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:gpaxe")
+		gsaxe = new saxe(Gold).setUnlocalizedName("gsaxe").setCreativeTab(CreativeTabs.TOOLS); // .setTextureName("toolcombine:gsaxe")
 		
-		essence = new Item().setUnlocalizedName("essence").setTextureName("toolcombine:essence").setCreativeTab(CreativeTabs.tabMaterials);
+		essence = new Item().setUnlocalizedName("essence").setCreativeTab(CreativeTabs.MATERIALS); // .setTextureName("toolcombine:essence")
 		
-		GameRegistry.registerItem(wpade, "wpade");
-		GameRegistry.registerItem(wpaxe, "wpaxe");
-		GameRegistry.registerItem(wsaxe, "wsaxe");
+		GameRegistry.register(wpade, new ResourceLocation("wpade"));
+		GameRegistry.register(wpaxe, new ResourceLocation("wpaxe"));
+		GameRegistry.register(wsaxe, new ResourceLocation("wsaxe"));
 		
-		GameRegistry.registerItem(spade, "spade");
-		GameRegistry.registerItem(spaxe, "spaxe");
-		GameRegistry.registerItem(ssaxe, "ssaxe");
+		GameRegistry.register(spade, new ResourceLocation("spade"));
+		GameRegistry.register(spaxe, new ResourceLocation("spaxe"));
+		GameRegistry.register(ssaxe, new ResourceLocation("ssaxe"));
 		
-		GameRegistry.registerItem(ipade, "ipade");
-		GameRegistry.registerItem(ipaxe, "ipaxe");
-		GameRegistry.registerItem(isaxe, "isaxe");
+		GameRegistry.register(ipade, new ResourceLocation("ipade"));
+		GameRegistry.register(ipaxe, new ResourceLocation("ipaxe"));
+		GameRegistry.register(isaxe, new ResourceLocation("isaxe"));
 		
-		GameRegistry.registerItem(dpade, "dpade");
-		GameRegistry.registerItem(dpaxe, "dpaxe");
-		GameRegistry.registerItem(dsaxe, "dsaxe");
+		GameRegistry.register(dpade, new ResourceLocation("dpade"));
+		GameRegistry.register(dpaxe, new ResourceLocation("dpaxe"));
+		GameRegistry.register(dsaxe, new ResourceLocation("dsaxe"));
 		
-		GameRegistry.registerItem(gpade, "gpade");
-		GameRegistry.registerItem(gpaxe, "gpaxe");
-		GameRegistry.registerItem(gsaxe, "gsaxe");
+		GameRegistry.register(gpade, new ResourceLocation("gpade"));
+		GameRegistry.register(gpaxe, new ResourceLocation("gpaxe"));
+		GameRegistry.register(gsaxe, new ResourceLocation("gsaxe"));
 		
-		GameRegistry.registerItem(essence, "essence");
+		GameRegistry.register(essence, new ResourceLocation("essence"));
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(wsaxe), new Object[] {Items.wooden_shovel, Items.wooden_axe});
-		GameRegistry.addShapelessRecipe(new ItemStack(wpaxe), new Object[] {Items.wooden_pickaxe, Items.wooden_axe});
-		GameRegistry.addShapelessRecipe(new ItemStack(wpade), new Object[] {Items.wooden_shovel, Items.wooden_pickaxe});
+		GameRegistry.addShapelessRecipe(new ItemStack(wsaxe), new Object[] {Items.WOODEN_SHOVEL, Items.WOODEN_AXE});
+		GameRegistry.addShapelessRecipe(new ItemStack(wpaxe), new Object[] {Items.WOODEN_PICKAXE, Items.WOODEN_AXE});
+		GameRegistry.addShapelessRecipe(new ItemStack(wpade), new Object[] {Items.WOODEN_SHOVEL, Items.WOODEN_PICKAXE});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(ssaxe), new Object[] {Items.stone_shovel, Items.stone_axe});
-		GameRegistry.addShapelessRecipe(new ItemStack(spaxe), new Object[] {Items.stone_pickaxe, Items.stone_axe});
-		GameRegistry.addShapelessRecipe(new ItemStack(spade), new Object[] {Items.stone_shovel, Items.stone_pickaxe});
+		GameRegistry.addShapelessRecipe(new ItemStack(ssaxe), new Object[] {Items.STONE_SHOVEL, Items.STONE_AXE});
+		GameRegistry.addShapelessRecipe(new ItemStack(spaxe), new Object[] {Items.STONE_PICKAXE, Items.STONE_AXE});
+		GameRegistry.addShapelessRecipe(new ItemStack(spade), new Object[] {Items.STONE_SHOVEL, Items.STONE_PICKAXE});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(isaxe), new Object[] {ToolCombine.essence, Items.iron_ingot,Items.iron_ingot,Items.iron_ingot,Items.iron_ingot});
-		GameRegistry.addShapelessRecipe(new ItemStack(ipaxe), new Object[] {ToolCombine.essence, Items.iron_ingot,Items.iron_ingot,Items.iron_ingot,Items.iron_ingot,Items.iron_ingot});
-		GameRegistry.addShapelessRecipe(new ItemStack(ipade), new Object[] {ToolCombine.essence, Items.iron_ingot,Items.iron_ingot,Items.iron_ingot});
+		GameRegistry.addShapelessRecipe(new ItemStack(isaxe), new Object[] {ToolCombine.essence, Items.IRON_INGOT,Items.IRON_INGOT,Items.IRON_INGOT,Items.IRON_INGOT});
+		GameRegistry.addShapelessRecipe(new ItemStack(ipaxe), new Object[] {ToolCombine.essence, Items.IRON_INGOT,Items.IRON_INGOT,Items.IRON_INGOT,Items.IRON_INGOT,Items.IRON_INGOT});
+		GameRegistry.addShapelessRecipe(new ItemStack(ipade), new Object[] {ToolCombine.essence, Items.IRON_INGOT,Items.IRON_INGOT,Items.IRON_INGOT});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(dsaxe), new Object[] {ToolCombine.essence, Items.diamond,Items.diamond,Items.diamond,Items.diamond});
-		GameRegistry.addShapelessRecipe(new ItemStack(dpaxe), new Object[] {ToolCombine.essence, Items.diamond,Items.diamond,Items.diamond,Items.diamond,Items.diamond});
-		GameRegistry.addShapelessRecipe(new ItemStack(dpade), new Object[] {ToolCombine.essence, Items.diamond,Items.diamond,Items.diamond});
+		GameRegistry.addShapelessRecipe(new ItemStack(dsaxe), new Object[] {ToolCombine.essence, Items.DIAMOND,Items.DIAMOND,Items.DIAMOND,Items.DIAMOND});
+		GameRegistry.addShapelessRecipe(new ItemStack(dpaxe), new Object[] {ToolCombine.essence, Items.DIAMOND,Items.DIAMOND,Items.DIAMOND,Items.DIAMOND,Items.DIAMOND});
+		GameRegistry.addShapelessRecipe(new ItemStack(dpade), new Object[] {ToolCombine.essence, Items.DIAMOND,Items.DIAMOND,Items.DIAMOND});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(gsaxe), new Object[] {ToolCombine.essence, Items.gold_ingot,Items.gold_ingot,Items.gold_ingot,Items.gold_ingot});
-		GameRegistry.addShapelessRecipe(new ItemStack(gpaxe), new Object[] {ToolCombine.essence, Items.gold_ingot,Items.gold_ingot,Items.gold_ingot,Items.gold_ingot,Items.gold_ingot});
-		GameRegistry.addShapelessRecipe(new ItemStack(gpade), new Object[] {ToolCombine.essence, Items.gold_ingot,Items.gold_ingot,Items.gold_ingot});
+		GameRegistry.addShapelessRecipe(new ItemStack(gsaxe), new Object[] {ToolCombine.essence, Items.GOLD_INGOT,Items.GOLD_INGOT,Items.GOLD_INGOT,Items.GOLD_INGOT});
+		GameRegistry.addShapelessRecipe(new ItemStack(gpaxe), new Object[] {ToolCombine.essence, Items.GOLD_INGOT,Items.GOLD_INGOT,Items.GOLD_INGOT,Items.GOLD_INGOT,Items.GOLD_INGOT});
+		GameRegistry.addShapelessRecipe(new ItemStack(gpade), new Object[] {ToolCombine.essence, Items.GOLD_INGOT,Items.GOLD_INGOT,Items.GOLD_INGOT});
 		
-		GameRegistry.addSmelting(Items.wooden_pickaxe, new ItemStack(ToolCombine.essence), 1.0F);
-		GameRegistry.addSmelting(Items.wooden_axe, new ItemStack(ToolCombine.essence), 1.0F);
-		GameRegistry.addSmelting(Items.wooden_shovel, new ItemStack(ToolCombine.essence), 1.0F);
+		GameRegistry.addSmelting(Items.WOODEN_PICKAXE, new ItemStack(ToolCombine.essence), 1.0F);
+		GameRegistry.addSmelting(Items.WOODEN_AXE, new ItemStack(ToolCombine.essence), 1.0F);
+		GameRegistry.addSmelting(Items.WOODEN_SHOVEL, new ItemStack(ToolCombine.essence), 1.0F);
 		
-		GameRegistry.addSmelting(Items.stone_pickaxe, new ItemStack(ToolCombine.essence), 1.0F);
-		GameRegistry.addSmelting(Items.stone_axe, new ItemStack(ToolCombine.essence), 1.0F);
-		GameRegistry.addSmelting(Items.stone_shovel, new ItemStack(ToolCombine.essence), 1.0F);
+		GameRegistry.addSmelting(Items.STONE_PICKAXE, new ItemStack(ToolCombine.essence), 1.0F);
+		GameRegistry.addSmelting(Items.STONE_AXE, new ItemStack(ToolCombine.essence), 1.0F);
+		GameRegistry.addSmelting(Items.STONE_SHOVEL, new ItemStack(ToolCombine.essence), 1.0F);
     }
 }
